@@ -1,7 +1,7 @@
 const vscode = require("vscode");
 const cp = require("child_process");
 
-const branchPrefix = "event";
+const branchPrefix = "";
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -31,7 +31,7 @@ function activate(context) {
 
           runCommand("git add -A", () => {
             runCommand("git commit -m '" + commitMessage + "'", () => {
-              vscode.commands.executeCommand("wpilibcore.deployCode");
+              vscode.commands.executeCommand("wpilibcore.buildCode");
             });
           });
         }
